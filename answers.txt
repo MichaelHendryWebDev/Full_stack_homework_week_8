@@ -1,0 +1,33 @@
+1. What is responsible for defining the routes of the `games` resource?
+
+Express web server uses GET, POST, PUT and DELETE routes for HTTP request methods.
+
+2. What do you notice about the folder structure?  Whats the client responsible for? Whats the server responsible for?
+
+The sever folder uses 'seeds.js' to populate and create a data structure (keys and values) and creates a router to allow modifying the data.
+
+The client folder displays the form structure with App.vue using components to fill in fields to then be sent to the server as new data. The client folder uses Vue to navigate it's different components with eventBus.
+
+3. What are the the responsibilities of server.js?
+
+Allow Express to work with the app as well as body-parser to add data to request body. Link created router for HTTP request methods. Connect MongoClient to handle non-relational data and CRUD operations. CORS is added to allow our database to be access and modified without policy error stopping us from modifying our own database.
+
+4. What are the responsibilities of the `gamesRouter`?
+
+To create re-usable code for routes, stopping you from rewriting the same code.
+
+5. What process does the the client (front-end) use to communicate with the server?
+
+Getgames to display the data, postGame to add new data from form and deleteGame to send a request to delete a game.
+
+6. What optional second argument does the `fetch` method take? And what is it used for in this application? Hint: See [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) on the MDN docs
+
+json() method for the Body mixin fir request and response objects.
+
+7. Which of the games API routes does the front-end application consume (i.e. make requests to)?
+
+Post and Delete in GameService.js
+
+8. What are we using the [MongoDB Driver](http://mongodb.github.io/node-mongodb-native/) for?
+
+So we can manage Non-relational data. When data contains different properties they will not fit into we have in our seeds.js file.
